@@ -1,1 +1,22 @@
-# download script cd wget -O speedtest_cli.py "https://raw.githubusercontent.com/ForNesiaFreak/FNS_Debian7/fornesia.com/null/speedtest_cli.py" wget -O bench-network.sh "https://raw.githubusercontent.com/ForNesiaFreak/FNS_Debian7/fornesia.com/null/bench-network.sh" wget -O ps_mem.py "https://raw.githubusercontent.com/ForNesiaFreak/FNS_Debian7/fornesia.com/null/ps_mem.py" wget -O dropmon "https://raw.githubusercontent.com/ForNesiaFreak/FNS_Debian7/fornesia.com/null/dropmon.sh" wget -O user-login.sh "https://raw.githubusercontent.com/ForNesiaFreak/FNS_Debian7/fornesia.com/freak/user-login.sh" wget -O user-expired.sh "https://raw.githubusercontent.com/ForNesiaFreak/FNS_Debian7/fornesia.com/freak/user-expired.sh" #wget -O userlimit.sh "https://raw.githubusercontent.com/suryadewa/fornesiavps/fns/limit.sh" wget -O user-list.sh "https://raw.githubusercontent.com/ForNesiaFreak/FNS_Debian7/fornesia.com/freak/user-list.sh" wget -O /etc/issue.net "https://raw.githubusercontent.com/ForNesiaFreak/ root /root/user-expired.sh" > /etc/cron.d/user-expired #echo "@reboot root /root/userlimit.sh" > /etc/cron.d/userlimit echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot echo "* * * * * service dropbear restart" > /etc/cron.d/dropbear #sed -i '$ i\screen -AmdS check /root/autokill.sh' /etc/rc.local chmod +x bench-network.sh chmod +x speedtest_cli.py chmod +x ps_mem.py chmod +x user-login.sh chmod +x user-expired.sh #chmod +x userlimit.sh chmod +x dropmon chmod +x user-list.sh # finishing chown -R www-data:www-data /home/vps/public_html service cron restart service nginx start service php-fpm start service vnstat restart #service openvpn restart service snmpd restart service ssh restart service dropbear restart service fail2ban restart service squid3 restart service webmin restart rm -rf ~/.bash_history && history -c echo "unset HISTFILE" >> /etc/profile 
+# download script
+cd /usr/bin
+wget -O menu "https://raw.github.com/blazevpn/autoscript/master/menu.sh"
+wget -O usernew "https://raw.github.com/blazevpn/autoscript/master/usernew.sh"
+wget -O trial "https://raw.github.com/blazevpn/autoscript/master/trial.sh"
+wget -O hapus "https://raw.github.com/blazevpn/autoscript/master/hapus.sh"
+wget -O login "https://raw.github.com/blazevpn/autoscript/master/user-login.sh"
+wget -O member "https://raw.github.com/blazevpn/autoscript/master/user-list.sh"
+wget -O resvis "https://raw.github.com/blazevpn/autoscript/master/resvis.sh"
+wget -O speedtest "https://raw.github.com/blazevpn/autoscript/master/speedtest_cli.py"
+wget -O about "https://raw.github.com/blazevpn/autoscript/master/about.sh"
+echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
+echo "* * * * * service dropbear restart" > /etc/cron.d/dropbear
+chmod +x menu
+chmod +x usernew
+chmod +x trial
+chmod +x hapus
+chmod +x login
+chmod +x member
+chmod +x resvis
+chmod +x speedtest
+chmod +x about
