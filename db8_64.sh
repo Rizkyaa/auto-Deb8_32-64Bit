@@ -112,6 +112,11 @@ echo "$PASS" >> pass.txt
 tar cf client.tar 1194-client.ovpn pass.txt
 cp client.tar /home/vps/public_html/
 
+# install ssl
+wget https://raw.githubusercontent.com/Rizkyaa/auto-Deb8_32-64Bit/master/deb-ssl.sh
+chmod +x deb-ssl.sh
+./deb-ssl.sh
+
 # install badvpn
 wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/badvpn-udpgw"
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200' /etc/rc.local
