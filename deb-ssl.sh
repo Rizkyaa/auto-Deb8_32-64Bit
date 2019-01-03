@@ -65,7 +65,7 @@ socket = r:TCP_NODELAY=1
 client = no
 [dropbear]
 accept = 443
-connect = 127.0.0.1:25
+connect = 127.0.0.1:22
 cert = /etc/stunnel/stunnel.pem
 END
 
@@ -83,7 +83,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 clear
 	echo "------------------------- Informasi ------------------------"
 	echo ""
-	echo "Installer ini secara default stunnel berjalan pada port 2133"
+	echo "Installer ini secara default stunnel berjalan pada port 22"
 	echo ""
 	echo "Source by Rzengineer"
 	echo "Github https://github.com/rzengineer"
