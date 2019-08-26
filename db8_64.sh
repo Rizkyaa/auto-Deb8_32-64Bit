@@ -18,8 +18,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
 
 # set repo
-wget -O /etc/apt/sources.list "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/sources.list.debian7"
-wget "http://www.dotdeb.org/dotdeb.gpg"
+
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 
 # remove unused
