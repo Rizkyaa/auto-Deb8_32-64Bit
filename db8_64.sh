@@ -76,7 +76,7 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/nginx.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by Rizal Hidayat | 081515292117</pre>" > /home/vps/public_html/index.html
+echo "<pre>BlackHoster.co.id</pre>" > /home/vps/public_html/index.html
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/vps.conf"
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
@@ -248,7 +248,7 @@ service webmin restart
 
 # info
 clear
-echo "SoneD InjectoR | 081515292117" | tee log-install.txt
+echo "Coming | 0895332310333" | tee log-install.txt
 echo "===============================================" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Service"  | tee -a log-install.txt
