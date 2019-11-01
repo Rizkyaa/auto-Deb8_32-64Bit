@@ -182,13 +182,10 @@ apt-get -y install webmin
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 
-# Install Stunnel
-apt-get -y install stunnel4
-wget -O /etc/stunnel/stunnel.pem "https://raw.githubusercontent.com/Rizkyaa/auto-Deb8_32-64Bit/master/stunnel.pem"
-wget -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/Rizkyaa/auto-Deb8_32-64Bit/master/stunnel.conf"
-sed -i $MYIP2 /etc/stunnel/stunnel.conf
-sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
-service stunnel4 restart
+# install ssl
+wget https://raw.githubusercontent.com/Rizkyaa/auto-Deb8_32-64Bit/master/deb-ssl.sh
+chmod +x deb-ssl.sh
+./deb-ssl.sh
 
 # Install Fail2Ban
 apt-get -y install fail2ban;
