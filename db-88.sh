@@ -145,9 +145,11 @@ wget -O /usr/bin/badvpn-udpgw "https://github.com/Dreyannz/AutoScriptVPS/raw/mas
 if [ "$OS" == "x86_64" ]; then
   wget -O /usr/bin/badvpn-udpgw "https://github.com/Dreyannz/AutoScriptVPS/raw/master/Files/BadVPN/badvpn-udpgw64"
 fi
-sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
+sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
-screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
+screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200
+
+
 
 # SSH Configuration
 cd
@@ -179,6 +181,13 @@ apt-get -y install webmin
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 
+# Install Stunnel
+apt-get -y install stunnel4
+wget -O /etc/stunnel/stunnel.pem "https://raw.githubusercontent.com/Rizkyaa/auto-Deb8_32-64Bit/master/stunnel.pem"
+wget -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/Dreyannz/AutoScriptVPS/master/Files/Stunnel/stunnel.conf"
+sed -i $MYIP2 /etc/stunnel/stunnel.conf
+sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
+service stunnel4 restart
 
 # Install Fail2Ban
 apt-get -y install fail2ban;
