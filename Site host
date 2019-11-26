@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name vpn-ix.jagonyassh.com;
+    server_name vpn-us.blackhoster.co.id;
     return 301 https://$host$request_uri;
 }
  
@@ -8,8 +8,8 @@ server {
     listen 443;
     server_name vpn-ix.jagonyassh.com;
  
-    ssl_certificate           /etc/letsencrypt/live/vpn-ix.jagonyassh.com/fullchain.pem;
-    ssl_certificate_key       /etc/letsencrypt/live/vpn-ix.jagonyassh.com/privkey.pem;
+    ssl_certificate           /etc/letsencrypt/live/vpn-us.blackhoster.co.id/fullchain.pem;
+    ssl_certificate_key       /etc/letsencrypt/live/vpn-us.blackhoster.co.id/privkey.pem;
  
     ssl on;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
